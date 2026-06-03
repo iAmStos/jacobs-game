@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://k0k3j28od1g0"]
+
+[ext_resource type="Texture2D" uid="uid://cxw8g3rr0qos4" path="res://ChatGPT Image May 27, 2026, 02_15_00 PM.png" id="1_w5032"]
+
+[node name="YouWin" type="Control" unique_id=129863886]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2119003921]
+layout_mode = 0
+offset_right = 1536.0
+offset_bottom = 1024.0
+scale = Vector2(0.74570477, 0.6367614)
+texture = ExtResource("1_w5032")
