@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://qory7vb15e1h"]
+
+[ext_resource type="Script" uid="uid://yma25o0ost3a" path="res://winning_area_2d.gd" id="1_b033q"]
+[ext_resource type="Texture2D" uid="uid://c14ftxienbcb0" path="res://winning crystal.PNG" id="2_j8osf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uh7m"]
+size = Vector2(126, 98)
+
+[node name="WinningArea2D" type="Area2D" unique_id=2041504606]
+script = ExtResource("1_b033q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1482112493]
+shape = SubResource("RectangleShape2D_8uh7m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1205659506]
+texture = ExtResource("2_j8osf")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
