@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://k0k3j28od1g0"]
 
-[ext_resource type="Texture2D" uid="uid://cxw8g3rr0qos4" path="res://ChatGPT Image May 27, 2026, 02_15_00 PM.png" id="1_w5032"]
+[ext_resource type="Texture2D" uid="uid://c2svq5smxqah5" path="res://Game art/gold.png" id="1_iblaa"]
+[ext_resource type="Script" uid="uid://bl8s7shba36fh" path="res://you_win.gd" id="1_ibln8"]
 
 [node name="YouWin" type="Control" unique_id=129863886]
 layout_mode = 3
@@ -9,10 +10,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ibln8")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2119003921]
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=1878610043]
 layout_mode = 0
-offset_right = 1536.0
-offset_bottom = 1024.0
-scale = Vector2(0.74570477, 0.6367614)
-texture = ExtResource("1_w5032")
+offset_right = 230.4
+offset_bottom = 129.59999
+scale = Vector2(5, 5)
+texture = ExtResource("1_iblaa")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Button" type="Button" parent="." unique_id=393281932]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 377.0
+offset_right = 637.0
+offset_bottom = 408.0
+text = "Restart
+"
+
+[node name="Label" type="Label" parent="Button" unique_id=658557967]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -88.0
+offset_right = 75.0
+offset_bottom = -65.0
+text = "You Win!"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

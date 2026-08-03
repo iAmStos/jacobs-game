@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cwqies7gyuksp"]
+
+[ext_resource type="Script" uid="uid://c3qmqonythd8n" path="res://scenes/you_lose.gd" id="1_qwtk8"]
+[ext_resource type="Texture2D" uid="uid://bio3xf0qcb06v" path="res://Game art/red.png" id="2_qwtk8"]
+
+[node name="YouLose" type="CanvasLayer" unique_id=1060532427]
+script = ExtResource("1_qwtk8")
+
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=1095503030]
+offset_right = 230.4
+offset_bottom = 129.59999
+scale = Vector2(5, 5)
+texture = ExtResource("2_qwtk8")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Button" type="Button" parent="." unique_id=1122575800]
+offset_left = 572.0
+offset_top = 377.0
+offset_right = 637.0
+offset_bottom = 408.0
+text = "Restart
+"
+
+[node name="Label" type="Label" parent="." unique_id=1318930830]
+offset_left = 564.0
+offset_top = 261.0
+offset_right = 604.0
+offset_bottom = 284.0
+text = "You Lose!"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

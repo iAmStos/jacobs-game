@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b71fq444nitm"]
 
 [ext_resource type="Script" uid="uid://dwqf5gcm7pgqr" path="res://orb.gd" id="1_ogqpy"]
-[ext_resource type="Texture2D" uid="uid://b2lne75bvf4hu" path="res://icon.svg" id="2_xdlj8"]
+[ext_resource type="Texture2D" uid="uid://r3uw2lkaby05" path="res://Game art/projectileattack.png" id="2_xdlj8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qvkr"]
 
@@ -9,7 +9,7 @@
 script = ExtResource("1_ogqpy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1040173670]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.079538144, 0.079538144)
 texture = ExtResource("2_xdlj8")
 
 [node name="Area2D" type="CollisionShape2D" parent="." unique_id=2131838866]

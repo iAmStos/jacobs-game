@@ -12,6 +12,8 @@ func _ready():
 	_set_player_node()
 
 func _physics_process(delta):
+	
+	
 	if not is_instance_valid(player_node):
 		_set_player_node()
 		if not is_instance_valid(player_node):
@@ -32,7 +34,16 @@ func _physics_process(delta):
 		var next_path_position = nav_agent_node.get_next_path_position()
 		var direction = global_position.direction_to(next_path_position)
 		velocity = direction * speed
-
+		if direction.y > 0:
+			$AnimatedSprite2D.play("down")
+		elif direction.y < 0:
+			$AnimatedSprite2D.play("up")
+		elif direction.x > 0:
+			$AnimatedSprite2D.play("left")
+		elif direction.x < 0:
+			$AnimatedSprite2D.play("right")
+		if direction == Vector2.ZERO:
+			$AnimatedSprite2D.stop()
 	move_and_slide()
 
 func can_see_player() -> bool:
@@ -61,3 +72,9 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
 		queue_free()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent().is_in_group("player"):
+		area.get_parent().take_damage()
+		self.queue_free()
