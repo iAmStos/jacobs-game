@@ -57,7 +57,7 @@ position = Vector2(2514, -973)
 position = Vector2(605, 2214)
 
 [node name="Enemy12" parent="." unique_id=1671224450 instance=ExtResource("4_ykrsh")]
-position = Vector2(4115, 1115)
+position = Vector2(4338, 1641)
 
 [node name="Enemy13" parent="." unique_id=1254672830 instance=ExtResource("4_ykrsh")]
 position = Vector2(946, -502)
@@ -84,13 +84,13 @@ position = Vector2(-1284, -1063)
 position = Vector2(-1080, -93)
 
 [node name="Enemy21" parent="." unique_id=1005838734 instance=ExtResource("4_ykrsh")]
-position = Vector2(3014, 605)
+position = Vector2(3705, 305)
 
 [node name="Enemy22" parent="." unique_id=1615161673 instance=ExtResource("4_ykrsh")]
 position = Vector2(2816, 1638)
 
 [node name="Enemy23" parent="." unique_id=1400082953 instance=ExtResource("4_ykrsh")]
-position = Vector2(4115, 1115)
+position = Vector2(4017, 1007)
 
 [node name="Enemy24" parent="." unique_id=970787241 instance=ExtResource("4_ykrsh")]
 position = Vector2(4641, 2663)
@@ -154,5 +154,4 @@ position = Vector2(3412, 1898)
 position = Vector2(3155, -1446)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=992089219]
-visible = false
 color = Color(0, 0, 0, 1)
