@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b71fq444nitm" path="res://orb.tscn" id="2_sweqy"]
 [ext_resource type="PackedScene" uid="uid://c8wowrl7mp0lp" path="res://bomb.tscn" id="3_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://b4t8g576u6nhq" path="res://Game art/timmyside.png" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://t621s0imx6tp" path="res://Game art/Lighting.png" id="6_2hs0m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
 atlas = ExtResource("2_i3pqv")
@@ -124,7 +125,15 @@ animation = &"right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1001550767]
 shape = SubResource("RectangleShape2D_8uh7m")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1005972409]
+[node name="Area2D" type="Area2D" parent="." unique_id=1005972409 groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1884414859]
 shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1633985662]
+position = Vector2(-3.0000305, -2.9999847)
+scale = Vector2(6.82, 5.51)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("6_2hs0m")
+texture_scale = 0.5

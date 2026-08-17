@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-@export var speed: float = 100.0
+@export var speed: float = 120.0
 @export var sight_collision_mask: int = 1
 var health: int = 3
 
 var nav_agent_node: NavigationAgent2D
 var player_node: Node2D
+
+var player_present = false
 
 func _ready():
 	nav_agent_node = $NavigationAgent2D
@@ -22,9 +24,10 @@ func _physics_process(delta):
 			return
 
 	if not can_see_player():
-		velocity = Vector2.ZERO
-		move_and_slide()
-		return
+		if not player_present:
+			velocity = Vector2.ZERO
+			move_and_slide()
+			return
 
 	nav_agent_node.target_position = player_node.global_position
 
@@ -78,3 +81,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("player"):
 		area.get_parent().take_damage()
 		self.queue_free()
+
+
+
+func _on_detection_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		player_present = true
+
+
+func _on_detection_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		player_present = false
