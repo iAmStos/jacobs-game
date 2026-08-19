@@ -30,9 +30,12 @@ func _physics_process(delta):
 		bomb()
 
 func shoot():
+	var mouse_position = get_global_mouse_position()
+	var shoot_direction = (mouse_position - global_position).normalized()
+
 	var bullet_instance = orb_scene.instantiate()
-	bullet_instance.position = global_position
-	bullet_instance.rotation = last_direction.angle()
+	bullet_instance.global_position = global_position
+	bullet_instance.rotation = shoot_direction.angle()
 	bullet_manager.add_child(bullet_instance)
 
 func bomb():
