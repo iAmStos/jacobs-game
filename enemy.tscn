@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ct7bbig4itf2w" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://h3pge02rt1xt" path="res://Game art/moldside.png" id="3_qi2p4"]
+[ext_resource type="Texture2D" uid="uid://cw3t4jiplxlc5" path="res://Game art/New Piskel234567098765432456789.png" id="4_epg4t"]
 [ext_resource type="Texture2D" uid="uid://dkjx1d8bxde10" path="res://Game art/moldfront.png" id="4_iifgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbegm"]
@@ -107,6 +108,7 @@ animations = [{
 radius = 269.00186
 
 [node name="Enemy" type="CharacterBody2D" unique_id=518769162]
+modulate = Color(0.69135684, 0.6913568, 0.69135684, 1)
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2066826691]
@@ -123,6 +125,7 @@ debug_path_custom_color = Color(1, 1, 0, 1)
 shape = SubResource("CircleShape2D_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=436846768]
+self_modulate = Color(0.50140655, 0.5014065, 0.5014065, 1)
 scale = Vector2(2.3, 2.3)
 sprite_frames = SubResource("SpriteFrames_3yqyl")
 animation = &"up"
@@ -131,6 +134,30 @@ animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1281337659]
 shape = SubResource("CircleShape2D_qi2p4")
+
+[node name="FliesCPUParticles2D" type="CPUParticles2D" parent="." unique_id=1551141952]
+amount = 15
+texture = ExtResource("4_epg4t")
+lifetime = 5.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+orbit_velocity_min = -0.3
+orbit_velocity_max = 0.3
+linear_accel_min = -1.0
+linear_accel_max = 1.0
+damping_min = 10.0
+damping_max = 30.0
+
+[node name="ExplosionCPUParticles2D" type="CPUParticles2D" parent="." unique_id=1756206640]
+emitting = false
+
+[node name="StinkTrailCPUParticles2D" type="CPUParticles2D" parent="." unique_id=759163769]
+emitting = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=80009679]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
