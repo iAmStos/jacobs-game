@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dti60cuijoyyx"]
+
+[ext_resource type="Texture2D" uid="uid://hs4bcblwn220" path="res://Game art/Angil enrgy.png" id="1_7st12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x34h5"]
+size = Vector2(20, 37)
+
+[node name="EnergyDrink" type="Area2D" unique_id=2084866141 groups=["energy_drink"]]
+
+[node name="AngilEnrgy" type="Sprite2D" parent="." unique_id=1295279897]
+scale = Vector2(2, 2)
+texture = ExtResource("1_7st12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375343171]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_x34h5")

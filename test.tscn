@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bhfn74xf45j7j" path="res://scenes/test.tscn" id="2_ppyta"]
 [ext_resource type="PackedScene" uid="uid://qory7vb15e1h" path="res://winning_area_2d.tscn" id="3_ppyta"]
 [ext_resource type="PackedScene" uid="uid://qfy6hind0loa" path="res://enemy.tscn" id="4_ykrsh"]
+[ext_resource type="PackedScene" uid="uid://dti60cuijoyyx" path="res://scenes/energy_drink.tscn" id="5_g14j6"]
+[ext_resource type="Script" uid="uid://nw20172lq77s" path="res://pickup_spots.gd" id="5_vbegm"]
+[ext_resource type="PackedScene" uid="uid://bummn4f0hgpkg" path="res://scenes/ChocolateMilk.tscn" id="6_vbegm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4uo0j"]
 cell_size = 64.0
@@ -13,8 +16,6 @@ agent_radius = 64.0
 
 [node name="Player" parent="." unique_id=772718007 instance=ExtResource("1_37kl0")]
 z_index = 1
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=556795231]
 
 [node name="TileMap2" parent="." unique_id=1924619901 instance=ExtResource("2_ppyta")]
 self_modulate = Color(0.6174547, 0.61745477, 0.6174546, 1)
@@ -130,6 +131,23 @@ position = Vector2(1, 1523)
 navigation_polygon = SubResource("NavigationPolygon_4uo0j")
 
 [node name="BulletManager" type="Node2D" parent="." unique_id=739006561]
+
+[node name="PickupSpots" type="Node2D" parent="." unique_id=2128461860]
+script = ExtResource("5_vbegm")
+chocolate_milk_scene = ExtResource("6_vbegm")
+energy_drink_scene = ExtResource("5_g14j6")
+
+[node name="Area2D" type="Node2D" parent="PickupSpots" unique_id=442456247]
+position = Vector2(-43, -163)
+
+[node name="Area2D3" type="Node2D" parent="PickupSpots" unique_id=1041662891]
+position = Vector2(-193, -311)
+
+[node name="Area2D4" type="Node2D" parent="PickupSpots" unique_id=402097202]
+position = Vector2(163, -320)
+
+[node name="Area2D2" type="Node2D" parent="PickupSpots" unique_id=1825208800]
+position = Vector2(262, -162)
 
 [node name="WinningSpots" type="Node2D" parent="." unique_id=683044256]
 

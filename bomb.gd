@@ -23,4 +23,4 @@ func _on_body_entered(body: Node2D):
 	if body.is_in_group("player"):
 		return
 	if body.has_method("take_damage"):
-		body.take_damage(1)
+		body.take_damage(3)

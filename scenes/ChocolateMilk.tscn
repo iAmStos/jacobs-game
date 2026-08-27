@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bummn4f0hgpkg"]
+
+[ext_resource type="Texture2D" uid="uid://bwq4he2x1ngm7" path="res://Game art/chocolit milk glass.png" id="1_k0tik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0tik"]
+size = Vector2(20, 35)
+
+[node name="ChocolateMilk" type="Area2D" unique_id=363213132 groups=["chocolate_milk"]]
+
+[node name="ChocolitMilkGlass" type="Sprite2D" parent="." unique_id=1123010773]
+scale = Vector2(2, 2)
+texture = ExtResource("1_k0tik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=704162007]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_k0tik")
