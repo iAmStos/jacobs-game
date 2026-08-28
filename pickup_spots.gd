@@ -30,7 +30,7 @@ func spawn_pickup(spot: Node2D):
     var is_milk = randi() % 2 == 0  # Randomly decide between chocolate milk and energy drink
     var pickup_instance: Node2D
     if is_milk:
-        pickup_instance = chocolate_milk_scene.instantiate()        
+        pickup_instance = chocolate_milk_scene.instantiate()
     else:
         pickup_instance = energy_drink_scene.instantiate()
 

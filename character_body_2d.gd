@@ -91,7 +91,7 @@ func update_health_bar():
 	elif health >= 1 and health <= 3:
 		health_bar.texture_over = choclate_milk_textures[health - 1]
 	else:
-		health_bar.texture = null
+		health_bar.texture_over = null
 	health_bar.value = health
 
 func update_energy_bar():
