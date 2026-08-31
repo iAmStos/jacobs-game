@@ -6,7 +6,7 @@ var last_direction = Vector2.ZERO
 @onready var bullet_manager: Node = get_parent().get_node("BulletManager")
 @export var orb_scene : PackedScene
 @export var bomb_scene : PackedScene
-@export var energy : int = 5
+@export var energy : int = 10
 
 @onready var health_bar = get_node("CanvasLayer/HBoxContainer/ChocyMilkBar")
 @onready var energy_bar = get_node("CanvasLayer/HBoxContainer/Energy")
@@ -81,7 +81,7 @@ func _on_area_2d_area_entered(area: Area2D):
 			update_health_bar()
 	if area.is_in_group("energy_drink"):
 		if energy < 10:
-			energy = min(energy + 5, 10)
+			energy = min(energy + 10, 20)
 			area.queue_free()
 			update_energy_bar()
 

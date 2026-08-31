@@ -161,7 +161,7 @@ texture_progress = ExtResource("7_b26j0")
 
 [node name="Energy" type="TextureProgressBar" parent="CanvasLayer/HBoxContainer" unique_id=947875065]
 layout_mode = 2
-max_value = 10.0
+max_value = 20.0
 value = 5.0
 fill_mode = 3
 texture_progress = ExtResource("7_dw050")

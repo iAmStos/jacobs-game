@@ -105,7 +105,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qi2p4"]
-radius = 269.00186
+radius = 295.08304
 
 [node name="Enemy" type="CharacterBody2D" unique_id=518769162]
 modulate = Color(0.69135684, 0.6913568, 0.69135684, 1)
