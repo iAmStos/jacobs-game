@@ -4,6 +4,7 @@ var speed = 400  # speed in pixels/sec
 var health = 4
 var last_direction = Vector2.ZERO
 @onready var bullet_manager: Node = get_parent().get_node("BulletManager")
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var orb_scene : PackedScene
 @export var bomb_scene : PackedScene
 @export var energy : int = 10
@@ -66,6 +67,9 @@ func bomb():
 
 func take_damage():
 	health -= 1
+	animated_sprite.modulate = Color.RED
+	var flash_tween = create_tween()
+	flash_tween.tween_property(animated_sprite, "modulate", Color.WHITE, 0.5)
 	print(health)
 	if health <=0:
 		print("Die")

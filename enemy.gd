@@ -8,6 +8,7 @@ var nav_agent_node: NavigationAgent2D
 var player_node: Node2D
 
 var player_present = false
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
 	nav_agent_node = $NavigationAgent2D
@@ -72,6 +73,9 @@ func _set_player_node() -> void:
 	player_node = get_tree().get_root().find_child("Player", true, false) as Node2D
 
 func take_damage(amount: int) -> void:
+	animated_sprite.modulate = Color.RED
+	var flash_tween = create_tween()
+	flash_tween.tween_property(animated_sprite, "modulate", Color.WHITE, 0.5)
 	health -= amount
 	if health <= 0:
 		queue_free()
